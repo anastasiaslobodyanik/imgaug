@@ -83,7 +83,7 @@ class HeatmapsOnImage(IAugmentable):
 
         min_is_zero = 0.0 - eps < min_value < 0.0 + eps
         max_is_one = 1.0 - eps < max_value < 1.0 + eps
-        if min_is_zero and max_is_one:
+        if min_is_zero and max_is_one or min_value == max_value:
             self.arr_0to1 = arr
         else:
             self.arr_0to1 = (arr - min_value) / (max_value - min_value)
