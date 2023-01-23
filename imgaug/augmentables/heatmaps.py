@@ -59,7 +59,7 @@ class HeatmapsOnImage(IAugmentable):
         assert len(shape) in [2, 3], (
             "Argument 'shape' in HeatmapsOnImage expected to be 2d or 3d, "
             "got shape %s." % (shape,))
-        assert min_value < max_value, (
+        assert min_value <= max_value, (
             "Expected min_value to be lower than max_value, "
             "got %.4f and %.4f" % (min_value, max_value))
 
